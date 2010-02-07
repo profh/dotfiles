@@ -1,0 +1,2 @@
+export EDITOR='mate -w'
+export GIT_EDITOR="mate -w"

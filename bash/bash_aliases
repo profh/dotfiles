@@ -1,0 +1,26 @@
+# set up aliases
+# --------------
+# for rails
+alias ss='script/server' # rails: script/server
+alias sc='script/console' # rails: script/console
+alias sg='script/generate' # rails: script/generate
+alias sgs='script/generate scaffold' # rails: script/generate
+alias sgm='script/generate migration' # rails: script/generate
+alias sgns='script/generate nifty_scaffold' # use nifty_scaffold
+alias r="rake"
+alias rdm="rake db:migrate"
+alias rdp="rake db:populate"  # assuming a populate task exists
+
+
+# --------------
+# for git
+alias g="git status"	# status of files
+alias ga="git add"		# add a file to staging
+alias gr="git rm" 		# remove a file 
+alias gc="git commit"	# commit files to repo
+alias gp="git push"		# push to repo
+alias gpl="git pull"	# pull from repo
+alias gpom="git push origin master" # typically to send to github
+alias gco="git checkout" # checkout
+alias gb="git branch"	# for branching
+alias gm="git merge"	# for merging
