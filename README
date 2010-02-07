@@ -1,0 +1,17 @@
+This is some of my dotfiles that I use on my machine (Mac OSX 10.6) and that students see me use in class.  The two most notable are the .irbrc file and the bash_aliases file.  The latter provides lots of shortcuts for common tasks that I do with rails or with git.  The former provides a nicely formatted irb or script/console output that students see in class.
+
+To use these, you would have to copy the contents into a respective dotfile.  (Note: dotfiles are typically hidden files that don't appear except on the command line, and even then need to use ls -a to have them show up on a list.) Because dotfiles are normally hidden, the files in this repo don't have dots in front of them.  
+
+Setting up .irbrc
+------------------
+If you have Textmate, type "mate .irbrc" as soon as the Terminal window opens to open this file and then dump the contents of this irbrc file into it and save. (Substitute nano, vim, etc. for your favorite editor if you use something else.) Be sure you have all the specified gems, of course, otherwise this was pretty pointless.
+
+Setting up aliases
+-------------------
+Again, assuming you are using Textmate (I know most Mac users use it), type "mate .bash_profile" and paste the bash_aliases file into this file and save.  You will note that I actually created another folder (.bash -- hidden in the actual system) and split up a lot of the .bash_profile functionality so I could extend it as I want and keep things neat.  This is not strictly necessary and unless you feel comfortable on the command line, I suggest just grab the aliases and plop them into .bash_profile.  You can also edit these aliases and/or add your own to the list.  (I tweak these from time to time...)
+
+I hope you all find this helpful.  If there are questions, you can always ask me in class, etc.
+
+Qapla'
+
+Prof. H
