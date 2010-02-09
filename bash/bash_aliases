@@ -1,5 +1,13 @@
 # set up aliases
 # --------------
+# for command line
+alias ls="ls -G"
+alias h="cd ~"
+alias p1="cd Sites/PATS/67272_PATSv1"
+alias p2="cd Sites/PATS/67272_PATSv2"
+
+
+# --------------
 # for rails
 alias ss='script/server' # rails: script/server
 alias sc='script/console' # rails: script/console

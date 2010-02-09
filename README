@@ -8,7 +8,7 @@ If you have Textmate, type "mate .irbrc" as soon as the Terminal window opens to
 
 Setting up aliases
 -------------------
-Again, assuming you are using Textmate (I know most Mac users use it), type "mate .bash_profile" and paste the bash_aliases file into this file and save.  You will note that I actually created another folder (.bash -- hidden in the actual system) and split up a lot of the .bash_profile functionality so I could extend it as I want and keep things neat.  This is not strictly necessary and unless you feel comfortable on the command line, I suggest just grab the aliases and plop them into .bash_profile.  You can also edit these aliases and/or add your own to the list.  (I tweak these from time to time...)
+Again, assuming you are using Textmate (I know most Mac users use it), type "mate .bash_profile" and paste the bash_aliases file into this file and save.  You will note that I actually created another folder (.bash -- hidden in the actual system) and split up a lot of the .bash_profile functionality so I could extend it as I want and keep things neat.  This is not strictly necessary and unless you feel comfortable on the command line, I suggest just grab the aliases for rails and/or git and plop them into .bash_profile.  You can also edit these aliases and/or add your own to the list.  (I tweak these from time to time...)
 
 I hope you all find this helpful.  If there are questions, you can always ask me in class, etc.
 

@@ -1,2 +1,4 @@
 export EDITOR='mate -w'
 export GIT_EDITOR="mate -w"
+export TERM="xterm-color"
+export PS1="\e[1;30m\][\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w\[\e[0m\]\e[1;30m\]]\n> \e[37m\]"
