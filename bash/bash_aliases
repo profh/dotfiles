@@ -3,9 +3,10 @@
 # for command line
 alias ls="ls -G"
 alias h="cd ~"
+# Project aliases
 alias p1="cd Sites/PATS/67272_PATSv1"
-alias p2="cd Sites/PATS/67272_PATSv2"
-
+alias p2="cd Sites/PUCS"
+alias a1="cd Sites/arbeit_project/arbeit"
 
 # --------------
 # for rails
@@ -32,3 +33,6 @@ alias gpom="git push origin master" # typically to send to github
 alias gco="git checkout" # checkout
 alias gb="git branch"	# for branching
 alias gm="git merge"	# for merging
+alias gi="git instaweb --httpd webrick" # to visualize in browser
+alias gl="git gl"			# pretty log (specs in .gitconfig)
+alias gd="git diff"		# diff a file

@@ -11,29 +11,46 @@
 # hirb
 
 
-# Make gems available
-require 'rubygems'
+# Make basic gems available
+begin
+  # Have to start with rubygems
+  require 'rubygems'
  
-# Pretty Print method
-require 'pp'
+  # include Pretty Print method
+  require 'pp'
 
-# include Date automatically as well as Time enhancements
-require 'date'
-require 'time'
+  # include Date automatically as well as Time enhancements
+  require 'date'
+  require 'time'
+rescue LoadError => e
+	warn "Couldn't load basic gems: #{e}"
+end
 
 # Have to have the Chronic gem (n'est-ce pas, Brad?)
-require 'chronic'
+begin
+  require 'chronic'
+rescue LoadError => e
+	warn "Couldn't load Chronic: #{e}"
+end
 
 # Create an alias for a quick exit
 alias q exit
   
 # Dr Nic's gem to find what methods yield the desired result
 # http://drnicwilliams.com/2006/10/12/my-irbrc-for-consoleirb/
-require 'what_methods'
+begin
+  require 'what_methods'
+rescue LoadError => e
+	warn "Couldn't load what_methods: #{e}"
+end
 
 # Add in Dr. Nic's map_by_method while we're at it
 # http://drnicutilities.rubyforge.org/map_by_method/
-require 'map_by_method'
+begin
+  require 'map_by_method'
+rescue LoadError => e
+  warn "Couldn't load map_by_method: #{e}"
+end 
 
 # Load the readline module.
 IRB.conf[:USE_READLINE] = true
@@ -55,18 +72,27 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 # Wirble is a set of enhancements for irb
 # http://pablotron.org/software/wirble/README
 # Implies require 'pp', 'irb/completion', and 'rubygems'
-require 'wirble'
-Wirble.init
+begin
+  require 'wirble'
+  Wirble.init
  
-# Enable colored output (off by default)
-# Look at the readme file if you want to edit the colors
-Wirble.colorize
+  # Enable colored output (off by default)
+  # Look at the readme file if you want to edit the colors
+  Wirble.colorize
+rescue LoadError => e
+  warn "Couldn't load Wirble: #{e}"
+end
 
 # Hirb is a mini view framework for console applications, designed 
 # to make formatting of ActiveRecord objects easier on the eyes
 # http://tagaholic.me/2009/03/13/hirb-irb-on-the-good-stuff.html
-require 'hirb'
-Hirb::View.enable
+begin
+	require 'hirb'
+  Hirb::View.enable
+rescue LoadError => e
+	warn "Couldn't load Hirb: #{e}"
+end
+
 
 
 # Trick I like from Thoughtbot's Dan Croak to show log info in console

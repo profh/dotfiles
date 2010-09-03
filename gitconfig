@@ -1,3 +1,39 @@
 [user]
 	name = klingoncodewarrior
 	email = profh@cmu.edu
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+
+[color "branch"]
+  current = blue reverse
+  local = blue
+  remote = green
+
+[color "diff"]
+  meta = magenta bold
+  frag = yellow bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = green
+  changed = blue
+  untracked = red
+
+[core]
+  pager = less -FRSX
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = /Users/lheimann/.gitignore
+
+[apply]
+  whitespace = fix
+
+[alias]
+  co = checkout
+  gl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
