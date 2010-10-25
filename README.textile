@@ -1,23 +1,28 @@
 *Overview*
 
-This is some of my dotfiles that I use on my machine (currently Mac OSX 10.6.x) and that students see me use in class.  It is _not_ necessary for you to set up your machine with these files in this configuration.  I am providing this only because students ask about why their output doesn't look like mine and/or want to have a similar configuration.  I should also note these instructions work for either Mac or Linux machines; instructions have not be tested in Windows and may need to be modified.
+p<>. This is some of my dotfiles that I use on my machine (currently Mac OSX 10.6.x) and that students see me use in class.  _It is not necessary for you to set up your machine with these files in this configuration._  I am providing this only because students ask about why their output doesn't look like mine and/or want to have a similar configuration.  I should also note these instructions work for either Mac or Linux machines; instructions have not be tested in Windows and may need to be modified.
 
-The two most notable are the .irbrc file and the bash_aliases file.  The latter provides lots of shortcuts for common tasks that I do with rails or with git.  The former provides a nicely formatted irb or rails console output that students see in class. (Note: if you use the .irbrc file, you will need the required gems listed at the top of the file.)  The gitconfig file is also very useful IMO for displaying git information cleanly.
+p<>. The two most notable are the .irbrc file and the bash_aliases file.  The latter provides lots of shortcuts for common tasks that I do with rails or with git.  The former provides a nicely formatted irb or rails console output that students see in class. (Note: if you use the .irbrc file, you will need the required gems listed at the top of the file.)  The gitconfig file is also very useful IMO for displaying git information cleanly.
 
-To use these, you would have to copy the contents into a respective dotfile.  (Note: dotfiles are typically hidden files that don't appear except on the command line, and even then need to use ls -a to have them show up on a list.) Because dotfiles are normally hidden, the files in this repo don't have dots in front of them.  Make _sure_ you create your version with a dot in front.  
+p<>. To use these, you would have to copy the contents into a respective dotfile.  (Note: dotfiles are typically hidden files that don't appear except on the command line, and even then need to use ls -a to have them show up on a list.) Because dotfiles are normally hidden, the files in this repo don't have dots in front of them.  Make _sure_ you create your version with a dot in front.  
 
 
 *Setting up .irbrc*
 
-If you have Textmate, type "mate .irbrc" as soon as the Terminal window opens to open this file and then dump the contents of this irbrc file into it and save. (Substitute nano, vim, etc. for your favorite editor if you use something else.) Be sure you have all the specified gems, of course, otherwise this was pretty pointless.
+p<>. If you have Textmate, type "mate .irbrc" as soon as the Terminal window opens to open this file and then dump the contents of this irbrc file into it and save. (Substitute nano, vim, etc. for your favorite editor if you use something else.) Be sure you have all the specified gems, of course, otherwise this was pretty pointless.
 
 
 *Setting up aliases*
 
-Again, assuming you are using Textmate (I know most Mac users use it), the simplest thing to do is type "mate .bash_profile" and paste the bash_aliases file into this file and save.  You will note that I actually created another folder (.bash -- hidden in the actual system) and split up a lot of the .bash_profile functionality so I could extend it as I want and keep things neat.  This is not strictly necessary, but I like my organization a little more as it is easier to maintain. (Also note inside this hidden directory that the files do _not_ start with a dot.)  You can also edit these aliases and/or add your own to the list.  (I tweak these from time to time, especially the shortcuts for location...)
+p<>. The aliases are helpful, but you should probably tweak these, especially the shortcuts for location, so they work for you.  To set these up, the simplest thing to do is type "mate .bash_profile" and paste the bash_aliases file into this file and save.  You will note that I actually created another folder and split up a lot of the .bash_profile functionality so I could extend it as I want and keep things neat.  This is not strictly necessary, but I like my organization a little more as it is easier to maintain. If you want to go this route, do the following:
 
+# in your home directory, create a hidden bash folder with 'mkdir .bash' 
+# switch into this directory with 'cd .bash'
+# create the bash_alias file with 'mate bash_aliases' command (_no dot in front_)
+# add the the bash_config and bash_rvm files in similar fashion, if desired
+# open a new terminal session to confirm the changes were made 
 
-I hope you all find this helpful.  You should tweak these settings so they work well for you. (Don't be afraid to tweak the files as we can easily just restore back to this version.)  If there are questions, you can always ask me in class or come by my office and I can help you set it up (assuming you have a Mac or Linux laptop).
+p<>. I hope you all find this helpful.  Again, you should tweak these settings so they work well for you. (Don't be afraid to tweak the files as you can easily just restore back to this version.)  If there are questions, you can always ask me in class or come by my office and I can help you set it up (assuming you have a Mac or Linux laptop).
 
 Qapla'
 
