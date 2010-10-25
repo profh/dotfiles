@@ -2,24 +2,37 @@
 # --------------
 # for command line
 alias ls="ls -G"
-alias h="cd ~"
-# Project aliases
-alias p1="cd Sites/PATS/67272_PATSv1"
-alias p2="cd Sites/PUCS"
-alias a1="cd Sites/arbeit_project/arbeit"
+
+# Location aliases
+alias h="cd ~" # There's no place like home...
+alias pats="cd /Users/lheimann/67-272-S11/PATS"
+alias labs="cd /Users/lheimann/67-272-S11/labs"
+
 
 # --------------
-# for rails
+# for rails2
 alias ss='script/server' # rails: script/server
 alias sc='script/console' # rails: script/console
 alias sg='script/generate' # rails: script/generate
 alias sgs='script/generate scaffold' # rails: script/generate
 alias sgm='script/generate migration' # rails: script/generate
 alias sgns='script/generate nifty_scaffold' # use nifty_scaffold
-alias r="rake"
-alias rdm="rake db:migrate"
-alias rdp="rake db:populate"  # assuming a populate task exists
+alias rdm='rake db:migrate'
+alias rdp='rake db:populate'  # assuming a populate task exists
 
+
+# --------------
+# new for rails3
+alias rn='rails new'
+alias rs='rails server'
+alias rc='rails console'
+alias rdc='rails dbconsole'
+alias rg='rails generate'
+alias rgs='rails generate scaffold'
+alias rgm='rails generate migration'
+alias rgns='rails generate nifty:scaffold'
+
+# Note: still have access to 'rdm' and 'rdp' from above
 
 # --------------
 # for git

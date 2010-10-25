@@ -1,5 +1,5 @@
-# to help rvm install of ruby 1.9.1-p243
-export ARCHFLAGS="-arch i386 -arch x86_64" 
+# # to help rvm install of ruby 1.9.1-p243
+# export ARCHFLAGS="-arch i386 -arch x86_64" 
 
 # # rvm-install added line:
 # if [[ -s /Users/lheimann/.rvm/scripts/rvm ]] && [[ $rvm_loaded_flag != 1 ]] ; then source /Users/lheimann/.rvm/scripts/rvm ; fi

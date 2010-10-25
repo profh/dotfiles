@@ -1,10 +1,11 @@
 # =========================
 # Prof. H's .irbrc file
-# Last update: 2009-11-23
+# Last update: 2010-10-25
 # =========================
 # External gems required:
 # -------------------------
 # chronic 
+# chronic_duration
 # what_methods 
 # map_by_method
 # wirble
@@ -29,6 +30,7 @@ end
 # Have to have the Chronic gem (n'est-ce pas, Brad?)
 begin
   require 'chronic'
+  require 'chronic_duration'
 rescue LoadError => e
 	warn "Couldn't load Chronic: #{e}"
 end

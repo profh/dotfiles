@@ -1,11 +1,17 @@
+export PATH=/usr/local/git/bin:/usr/local/bin/src:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH
+if [[ -s ~/.rvm/scripts/rvm ]] ; then
+	source /Users/lheimann/.rvm/scripts/rvm
+	source /Users/lheimann/.rvm/scripts/completion ;
+fi
 source ~/.bash/bash_aliases
 source ~/.bash/bash_config
-# source ~/.bash/bash_rvm
+source ~/.bash/bash_rvm
 
-export PATH=/usr/local/git/bin:/usr/local/bin/src:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH
 
-# for rvm
-# to help rvm install of ruby 1.9.1-p243
-export ARCHFLAGS="-arch i386 -arch x86_64" 
-# instructed by rvm-install (no return at end of line)
-if [[ -s /usr/local/rvm/scripts/rvm ]] ; then source /usr/local/rvm/scripts/rvm ; fi
+# Setting PATH for EPD-6.1-1
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+export PATH
+
+MKL_NUM_THREADS=1
+export MKL_NUM_THREADS
