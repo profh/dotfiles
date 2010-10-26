@@ -3,13 +3,18 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then
 	source /Users/lheimann/.rvm/scripts/rvm
 	source /Users/lheimann/.rvm/scripts/completion ;
 fi
+
+# ============
+# Additional files to add to .bash_profile
 source ~/.bash/bash_aliases
 source ~/.bash/bash_config
 source ~/.bash/bash_rvm
 
 
+# ============
 # Setting PATH for EPD-6.1-1
-# The orginal version is saved in .bash_profile.pysave
+# Don't copy this unless you use this library (in which case you should have it already)
+# Note that the orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 export PATH
 

@@ -9,17 +9,19 @@ p<>. To use these, you would have to copy the contents into a respective dotfile
 
 *Setting up .irbrc*
 
-p<>. If you have Textmate, type "mate .irbrc" as soon as the Terminal window opens to open this file and then dump the contents of this irbrc file into it and save. (Substitute nano, vim, etc. for your favorite editor if you use something else.) Be sure you have all the specified gems, of course, otherwise this was pretty pointless.
+p<>. If you have Textmate, type "mate .irbrc" as soon as the Terminal window opens to open this file and then dump the contents of this irbrc file into it and save. (Substitute nano, vim, etc. for your favorite editor if you use something else.) Be sure you have all the specified gems, of course, otherwise this was pretty pointless and you will get an error.  There are plenty of comments in the irbrc file pointing to places where more documentation can be found on the required gems/methods.
 
 
 *Setting up aliases*
 
-p<>. The aliases are helpful, but you should probably tweak these, especially the shortcuts for location, so they work for you.  To set these up, the simplest thing to do is type "mate .bash_profile" and paste the bash_aliases file into this file and save.  You will note that I actually created another folder and split up a lot of the .bash_profile functionality so I could extend it as I want and keep things neat.  This is not strictly necessary, but I like my organization a little more as it is easier to maintain. If you want to go this route, do the following:
+p<>. The aliases are helpful, but you should probably tweak these (especially the shortcuts for location) so they work for you.  To set these up, the simplest thing to do is type "mate .bash_profile" and paste the bash_aliases file into this file and save.  You will note that I actually created another folder and split up a lot of the .bash_profile functionality so I could extend it as I want and keep things neat.  This is not strictly necessary, but I like my organization a little more as it is easier to maintain. If you want to go this route, do the following:
 
+# in your home directory, type 'mate .bash_profile' to open file
 # in your home directory, create a hidden bash folder with 'mkdir .bash' 
 # switch into this directory with 'cd .bash'
-# create the bash_alias file with 'mate bash_aliases' command (_no dot in front_)
+# create the bash_alias file with 'mate bash_aliases' command (_no dot in front_) and paste contents
 # add the the bash_config and bash_rvm files in similar fashion, if desired
+# add the 'additional files' segment to .bash_profile and save
 # open a new terminal session to confirm the changes were made 
 
 p<>. I hope you all find this helpful.  Again, you should tweak these settings so they work well for you. (Don't be afraid to tweak the files as you can easily just restore back to this version.)  If there are questions, you can always ask me in class or come by my office and I can help you set it up (assuming you have a Mac or Linux laptop).

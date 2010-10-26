@@ -4,8 +4,7 @@
 # =========================
 # External gems required:
 # -------------------------
-# chronic 
-# chronic_duration
+# chronic (actually aaronh-chronic is what is ruby 1.9.2 compatible)
 # what_methods 
 # map_by_method
 # wirble
@@ -30,7 +29,6 @@ end
 # Have to have the Chronic gem (n'est-ce pas, Brad?)
 begin
   require 'chronic'
-  require 'chronic_duration'
 rescue LoadError => e
 	warn "Couldn't load Chronic: #{e}"
 end
