@@ -95,13 +95,16 @@ end
 
 
 
-# Trick I like from Thoughtbot's Dan Croak to show log info in console
-# http://robots.thoughtbot.com/post/159806033/irb-script-console-tips
-# Log to STDOUT if in Rails (useful for showing the SQL query run)
-if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
- require 'logger'
- RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
-end
+# # Trick I like from Thoughtbot's Dan Croak to show log info in console
+# # http://robots.thoughtbot.com/post/159806033/irb-script-console-tips
+# # Log to STDOUT if in Rails (useful for showing the SQL query run)
+# if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
+#  require 'logger'
+#  RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
+# end
+
+# The above trick doesn't work in Rails 3, but this does...
+ActiveRecord::Base.logger = Logger.new(STDOUT) if defined? Rails::Console
 
 
 # This last one is really optional and I don't really use it but 
