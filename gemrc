@@ -9,3 +9,4 @@
 - http://gemcutter.org/
 :backtrace: false
 :bulk_threshold: 1000
+gem: --no-ri --no-rdoc

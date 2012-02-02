@@ -1,4 +1,54 @@
 export EDITOR='mate -w'
 export GIT_EDITOR="mate -w"
 export TERM="xterm-color"
-export PS1="\e[1;30m\][\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w\[\e[0m\]\e[1;30m\]]\n> \e[37m\]"
+
+untracked ()
+{
+	if ! git status --short | grep ? | cut -c 1 > /dev/null 2>&1;
+	then
+		return 0
+	else
+		return 1
+	fi
+}
+
+uncommitted ()
+{
+	if ! git status --short | grep M | cut -c 1 > /dev/null 2>&1;
+	then
+		return 1
+	else
+		return 0
+	fi
+}
+
+# Function to assemble the Git part of our prompt
+git_prompt ()
+{
+		# Don't show anything if no .git directory
+    if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    	return 0
+    fi
+		# Get the current git branch and wrap in parentheses
+    git_branch=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
+
+		# Experimenting with color change if uncommitted changes...
+		if ! git status --short | grep ? > /dev/null 2>&1;
+		then
+			if ! git status --short | grep M > /dev/null 2>&1; then
+				echo " ($git_branch)"
+			else
+				echo " \e[1;34m\]($git_branch)"
+			fi
+		else
+			echo " \e[1;31m\]($git_branch)"
+		fi
+		
+    # echo " ($git_branch)"
+}
+
+# Old PS1 if you don't want the git_prompt info added in...
+# export PS1="\e[1;30m\][\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w\[\e[0m\]\e[1;30m\]]\n> \e[37m\]"
+
+# Need to use PROMPT_COMMAND to refresh the prompt with new value of git_prompt
+PROMPT_COMMAND='PS1="\e[1;30m\][\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w$(git_prompt)\[\e[0m\]\e[1;30m\]]\n> \e[37m\]"'

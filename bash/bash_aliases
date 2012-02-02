@@ -2,27 +2,17 @@
 # --------------
 # for command line
 alias ls="ls -G"
+alias cdls='cd $1 && ls'
 
 # Location aliases
 alias h="cd ~" # There's no place like home...
-alias pats="cd /Users/lheimann/67-272-S11/PATS"
-alias labs="cd /Users/lheimann/67-272-S11/labs"
+alias pow="cd ~/.pow && ln -s" # For setting up pow (rack dev server)
+alias uif="cd /Users/lheimann/Projects/uifcostumes"
 
-
-# --------------
-# for rails2
-alias ss='script/server' # rails: script/server
-alias sc='script/console' # rails: script/console
-alias sg='script/generate' # rails: script/generate
-alias sgs='script/generate scaffold' # rails: script/generate
-alias sgm='script/generate migration' # rails: script/generate
-alias sgns='script/generate nifty_scaffold' # use nifty_scaffold
-alias rdm='rake db:migrate'
-alias rdp='rake db:populate'  # assuming a populate task exists
 
 
 # --------------
-# new for rails3
+# for rails3
 alias rn='rails new'
 alias rs='rails server'
 alias rc='rails console'
@@ -32,20 +22,38 @@ alias rgs='rails generate scaffold'
 alias rgm='rails generate migration'
 alias rgns='rails generate nifty:scaffold'
 
-# Note: still have access to 'rdm' and 'rdp' from above
+# --------------
+# for rake and testing
+alias rake='bundle exec rake'  # because rails 3.2.1 has issues with rake
+alias rdd='bundle exec rake db:drop'
+alias rdm='bundle exec rake db:migrate'
+alias rdp='bundle exec rake db:populate --trace'  # assuming a populate task exists
+alias rtu='bundle exec rake test:units'   # for unit testing
+alias rdtp='bundle exec rake db:test:prepare'
+alias cuke='bundle exec cucumber'         # for cucumber testing
+
 
 # --------------
 # for git
-alias g="git status"	# status of files
+alias gs="git status"	# status of files
 alias ga="git add"		# add a file to staging
 alias gr="git rm" 		# remove a file 
 alias gc="git commit"	# commit files to repo
 alias gp="git push"		# push to repo
 alias gpl="git pull"	# pull from repo
 alias gpom="git push origin master" # typically to send to github
+alias gpod="git push origin dev" # typically to send the dev branch to github
+alias gplom="git pull origin master" # typically to get master from github
+alias gplod="git pull origin dev" # typically to get the dev branch from github
+alias gphm="git push heroku master" # typically to send to heroku
 alias gco="git checkout" # checkout
+alias gcom="git checkout master" # checkout master branch
+alias gcod="git checkout dev" # checkout dev branch
+alias gcl="git clone"	# invoking clone command
 alias gb="git branch"	# for branching
 alias gm="git merge"	# for merging
 alias gi="git instaweb --httpd webrick" # to visualize in browser
 alias gl="git gl"			# pretty log (specs in .gitconfig)
 alias gd="git diff"		# diff a file
+
+alias hk="heroku"     # shortcut for heroku commands

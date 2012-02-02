@@ -2,6 +2,9 @@
 	name = profh
 	email = profh@cmu.edu
 
+[github]
+	user = profh
+
 [color]
   diff = auto
   status = auto
@@ -34,6 +37,6 @@
 [apply]
   whitespace = fix
 
-[alias]
-  co = checkout
-  gl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	[alias]
+	  co = checkout
+	  gl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(yellow):%an%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
