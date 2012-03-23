@@ -51,4 +51,7 @@ git_prompt ()
 # export PS1="\e[1;30m\][\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w\[\e[0m\]\e[1;30m\]]\n> \e[37m\]"
 
 # Need to use PROMPT_COMMAND to refresh the prompt with new value of git_prompt
-PROMPT_COMMAND='PS1="\e[1;30m\][\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w$(git_prompt)\[\e[0m\]\e[1;30m\]]\n> \e[37m\]"'
+# PROMPT_COMMAND='PS1="\e[1;30m\][\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w$(git_prompt)\[\e[0m\]\e[1;30m\]]\n> \e[37m\]"'
+
+# Revised prompt to correct line wrapping (thanks to Dylan Corwin)
+PROMPT_COMMAND='PS1="\[\e[1;30m\]\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w$(git_prompt)\[\e[0m\]\e[1;30m\]\n\[\e[37m\]>\[\e[37m\]"'

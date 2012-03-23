@@ -21,6 +21,7 @@ alias rg='rails generate'
 alias rgs='rails generate scaffold'
 alias rgm='rails generate migration'
 alias rgns='rails generate nifty:scaffold'
+alias ts='thin start'  # for the faster thin webserver (https://github.com/macournoyer/thin)
 
 # --------------
 # for rake and testing
@@ -31,6 +32,7 @@ alias rdp='bundle exec rake db:populate --trace'  # assuming a populate task exi
 alias rtu='bundle exec rake test:units'   # for unit testing
 alias rdtp='bundle exec rake db:test:prepare'
 alias cuke='bundle exec cucumber'         # for cucumber testing
+alias tc='bundle exec tconsole'						# for tconsole (faster testing console)
 
 
 # --------------
