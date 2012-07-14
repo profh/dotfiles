@@ -47,11 +47,13 @@ git_prompt ()
     # echo " ($git_branch)"
 }
 
-# Old PS1 if you don't want the git_prompt info added in...
+# Old PS1 ...
 # export PS1="\e[1;30m\][\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w\[\e[0m\]\e[1;30m\]]\n> \e[37m\]"
 
 # Need to use PROMPT_COMMAND to refresh the prompt with new value of git_prompt
 # PROMPT_COMMAND='PS1="\e[1;30m\][\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w$(git_prompt)\[\e[0m\]\e[1;30m\]]\n> \e[37m\]"'
 
-# Revised prompt to correct line wrapping (thanks to Dylan Corwin)
-PROMPT_COMMAND='PS1="\[\e[1;30m\]\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w$(git_prompt)\[\e[0m\]\e[1;30m\]\n\[\e[37m\]>\[\e[37m\]"'
+# New PS1 without git_prompt info added in with correct line wrapping
+#export PS1="\[\e[1;30m\]\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w\[\e[0m\]\e[1;30m\]\n\[\e[37m\]>\[\e[37m\]"
+# Need to use PROMPT_COMMAND to refresh the prompt with new value of git_prompt (correct line wrapping)
+PROMPT_COMMAND='PS1="\[\e[1;30m\]\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w$(git_prompt)\[\e[0m\]\e[1;30m\]\n\[\e[37m\]> \[\e[37m\]"'

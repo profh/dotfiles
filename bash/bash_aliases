@@ -8,19 +8,43 @@ alias cdls='cd $1 && ls'
 alias h="cd ~" # There's no place like home...
 alias pow="cd ~/.pow && ln -s" # For setting up pow (rack dev server)
 alias uif="cd /Users/lheimann/Projects/uifcostumes"
-
-
+alias thalia="cd /Users/lheimann/Projects/thalia"
+alias pats="cd /Users/lheimann/67-272-S12/class_projects/PATS_67272"
+alias labs="cd /Users/lheimann/67-272-S12/labs_2012"
+alias creamery="cd /Users/lheimann/67-272-S12/project_2012/creamery_2012"
+alias arbeit="cd /Users/lheimann/67-272-S11/arbeit"
+alias 67272="cd /Users/lheimann/Sites/67272_rebuild"
+alias advising="cd /Users/lheimann/67-272-S11/advising"
+alias quiz="cd /Users/lheimann/Projects/acacquiz"
+alias ft="cd /Users/lheimann/Projects/FT2011"
 
 # --------------
-# for rails3
+# for rails2
+# alias ss='script/server' # rails: script/server
+# alias sc='script/console' # rails: script/console
+# alias sg='script/generate' # rails: script/generate
+# alias sgs='script/generate scaffold' # rails: script/generate
+# alias sgm='script/generate migration' # rails: script/generate
+# alias sgns='script/generate nifty_scaffold' # use nifty_scaffold
+# alias rdd='rake db:drop'
+# alias rdm='rake db:migrate'
+# alias rdp='rake db:populate --trace'  # assuming a populate task exists
+# alias rtu='rake test:units'   # for unit testing
+# alias rdtp='rake db:test:prepare'
+
+# --------------
+# new for rails3
 alias rn='rails new'
 alias rs='rails server'
 alias rc='rails console'
 alias rdc='rails dbconsole'
 alias rg='rails generate'
 alias rgs='rails generate scaffold'
-alias rgm='rails generate migration'
+alias rgm='rails generate model'
+alias rgc='rails generate controller'
+alias rgmg='rails generate migration'
 alias rgns='rails generate nifty:scaffold'
+alias bi='bundle install'
 alias ts='thin start'  # for the faster thin webserver (https://github.com/macournoyer/thin)
 
 # --------------
@@ -29,6 +53,7 @@ alias rake='bundle exec rake'  # because rails 3.2.1 has issues with rake
 alias rdd='bundle exec rake db:drop'
 alias rdm='bundle exec rake db:migrate'
 alias rdp='bundle exec rake db:populate --trace'  # assuming a populate task exists
+alias rds='bundle exec rake db:startup --trace'  # assuming a startup task exists
 alias rtu='bundle exec rake test:units'   # for unit testing
 alias rdtp='bundle exec rake db:test:prepare'
 alias cuke='bundle exec cucumber'         # for cucumber testing
@@ -37,10 +62,10 @@ alias tc='bundle exec tconsole'						# for tconsole (faster testing console)
 
 # --------------
 # for git
-alias gs="git status"	# status of files
+alias g="git status"	# status of files
 alias ga="git add"		# add a file to staging
 alias gr="git rm" 		# remove a file 
-alias gc="git commit"	# commit files to repo
+alias gc="git commit -m"	# commit files to repo
 alias gp="git push"		# push to repo
 alias gpl="git pull"	# pull from repo
 alias gpom="git push origin master" # typically to send to github
