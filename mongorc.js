@@ -2,7 +2,7 @@
  * MongoDB Shell Enhancements for Hackers 
  * Tyler J. Brock - 2012
  * http://tylerbrock.github.com/mongo-hacker  
- * (with a few tweaks from @profh)
+ * (with a few modifications from @profh)
 */
 
 __ansi = {
@@ -317,7 +317,7 @@ DBCollection.prototype.gavg = function( group_field, avg_field, filter ) {
     return this.agg_group('avg', group_field, 'avg', '$' + avg_field, filter);
 }
 
-// Improve the default prompt with hostname, process type, and version
+// Improve the default prompt with process and db name
 prompt = function() {
     var serverstatus = db.serverStatus();
     var host = serverstatus.host.split('.')[0];
@@ -364,6 +364,14 @@ DBQuery.prototype.shellPrint = function(){
             }
             index_use += "]";
             output.push(index_use);
+        }
+        if ( this.hasNext() ) {
+            ___it___  = this;
+            output.push("More[" + colorize("true", "green", true) + "]");
+        }
+        else {
+            ___it___  = null;
+            output.push("More[" + colorize("false", "red", true) + "]");
         }
         print(output.join(" -- "));
    }
