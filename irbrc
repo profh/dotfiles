@@ -156,3 +156,16 @@ extend_console 'rails3', defined?(ActiveSupport::Notifications), false do
     puts "  #{ANSI[:UNDERLINE]}#{color}#{name} (#{time})#{ANSI[:RESET]}  #{sql}"
   end
 end
+
+# Simple methods in Rails console to get names of tables, columns(given a table), and models
+def tables
+  ActiveRecord::Base.connection.tables.sort!
+end
+
+def columns(table)
+  ActiveRecord::Base.connection.columns(table).map(&:name).sort!
+end
+
+def models
+  tables.select{|t| t != "schema_migrations"}.map{|t| t.underscore.singularize.camelize.to_sym}
+end
