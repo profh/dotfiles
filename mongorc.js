@@ -281,9 +281,7 @@ DBCollection.prototype.update = function( query , obj , upsert, multi ) {
         upsert = opts.upsert;
     }
 
-    this._db._initExtraInfo();
     this._mongo.update( this._fullName , query , obj , upsert ? true : false , _autoMulti ? true : multi );
-    this._db._getExtraInfo("Updated");
 }
 
 // Override group because map/reduce style is deprecated
