@@ -84,3 +84,4 @@ alias gl="git gl"			# pretty log (specs in .gitconfig)
 alias gd="git diff"		# diff a file
 
 alias hk="heroku"     # shortcut for heroku commands
+alias mdb="ulimit -n 2048 && mongod --config /usr/local/etc/mongod.conf"  # to start mongodb server
