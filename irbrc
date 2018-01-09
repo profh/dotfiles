@@ -1,22 +1,15 @@
 # =========================
 # Prof. H's .irbrc file
-# Last update: 2012-02-02
+# Last update: 2018-01-09
 # =========================
 # External gems required:
 # -------------------------
-# wirble
 # hirb
 
 puts "loading..."
 
 # Make gems available
 require 'rubygems'
- 
-# Awesome Print method (https://github.com/michaeldv/awesome_print)
-#require 'awesome_print'
-
-# Pretty Print method
-require 'pp'
 
 # include Date automatically as well as Time enhancements
 require 'date'
@@ -25,10 +18,6 @@ require 'time'
 # include my gem for doing Project Euler tasks and the like
 # require 'boqwij'
 
-
-# Have to have the Chronic gem (n'est-ce pas, Brad?)
-# require 'chronic'
-# require 'chronic_duration'
 
 # Create an alias for a quick exit
 alias q exit
@@ -56,14 +45,6 @@ IRB.conf[:PROMPT][:SIMPLE_COLOR] = {
   :PROMPT_S => "#{ANSI[:YELLOW]}?>#{ANSI[:RESET]} ",
   :RETURN   => "#{ANSI[:GREEN]}=>#{ANSI[:RESET]} %s\n",
   :AUTO_INDENT => true }
-  
-# # Dr Nic's gem to find what methods yield the desired result
-# # http://drnicwilliams.com/2006/10/12/my-irbrc-for-consoleirb/
-# require 'what_methods'
-# 
-# # Add in Dr. Nic's map_by_method while we're at it
-# # http://drnicutilities.rubyforge.org/map_by_method/
-# require 'map_by_method'
 
 # Load the readline module.
 IRB.conf[:USE_READLINE] = true
@@ -98,28 +79,12 @@ rescue LoadError
 end
 $console_extensions = [] 
 
-# Wirble is a set of enhancements for irb
-# http://pablotron.org/software/wirble/README
-# Implies require 'pp', 'irb/completion', and 'rubygems'
-extend_console 'wirble' do
-  require 'wirble'
-  Wirble.init
-  # Enable colored output (off by default)
-  # Look at the readme file if you want to edit the colors
-  Wirble.colorize
-end
 
-extend_console 'wirb' do
-  Wirb.start
-end
- 
 
 # Hirb is a mini view framework for console applications, designed 
 # to make formatting of ActiveRecord objects easier on the eyes
 # http://tagaholic.me/2009/03/13/hirb-irb-on-the-good-stuff.html
 extend_console 'hirb' do
-  # require 'hirb'
-  # Hirb::View.enable
   Hirb.enable
   extend Hirb::Console
 end

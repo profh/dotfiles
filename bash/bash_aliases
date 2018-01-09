@@ -1,43 +1,15 @@
 # set up aliases
 # --------------
 # for command line
-alias ls="ls -G"
+alias ls="ls -Gl"
+alias ll="ls -la"
 alias cdls='cd $1 && ls'
 
-# Location aliases
-alias h="cd ~" # There's no place like home...
-alias pow="cd ~/.pow && ln -s" # For setting up pow (rack dev server)
-alias uif="cd /Users/lheimann/Projects/uifcostumes"
-alias thalia="cd /Users/lheimann/Projects/thalia"
-alias pats="cd /Users/lheimann/67-272-S12/class_projects/PATS_67272"
-alias labs="cd /Users/lheimann/67-272-S12/labs_2012"
-alias creamery="cd /Users/lheimann/67-272-S12/project_2012/creamery_2012"
-alias arbeit="cd /Users/lheimann/67-272-S11/arbeit"
-alias 67272="cd /Users/lheimann/Sites/67272_rebuild"
-alias advising="cd /Users/lheimann/67-272-S11/advising"
-alias quiz="cd /Users/lheimann/Projects/acacquiz"
-alias ft="cd /Users/lheimann/Projects/FT2011"
-
 # --------------
-# for rails2
-# alias ss='script/server' # rails: script/server
-# alias sc='script/console' # rails: script/console
-# alias sg='script/generate' # rails: script/generate
-# alias sgs='script/generate scaffold' # rails: script/generate
-# alias sgm='script/generate migration' # rails: script/generate
-# alias sgns='script/generate nifty_scaffold' # use nifty_scaffold
-# alias rdd='rake db:drop'
-# alias rdm='rake db:migrate'
-# alias rdp='rake db:populate --trace'  # assuming a populate task exists
-# alias rtu='rake test:units'   # for unit testing
-# alias rdtp='rake db:test:prepare'
-
-# --------------
-# new for rails3
+# for rails 5
 alias rn='rails new'
 alias rs='rails server'
 alias rc='rails console'
-alias rdc='rails dbconsole'
 alias rg='rails generate'
 alias rgs='rails generate scaffold'
 alias rgm='rails generate model'
@@ -45,19 +17,27 @@ alias rgc='rails generate controller'
 alias rgmg='rails generate migration'
 alias rgns='rails generate nifty:scaffold'
 alias bi='bundle install'
-alias ts='thin start'  # for the faster thin webserver (https://github.com/macournoyer/thin)
 
-# --------------
-# for rake and testing
-alias rake='bundle exec rake'  # because rails 3.2.1 has issues with rake
-alias rdd='bundle exec rake db:drop'
-alias rdm='bundle exec rake db:migrate'
+alias rake='bundle exec rake'  # originally because rails 3.2.1 has issues with rake
 alias rdp='bundle exec rake db:populate --trace'  # assuming a populate task exists
-alias rds='bundle exec rake db:startup --trace'  # assuming a startup task exists
-alias rtu='bundle exec rake test:units'   # for unit testing
-alias rdtp='bundle exec rake db:test:prepare'
+alias rdc='bundle exec rails db:create'
+alias rdd='bundle exec rails db:drop'
+alias rdm='bundle exec rails db:migrate'
+alias rdp='bundle exec rails db:populate --trace'  # assuming a populate task exists
+alias rds='bundle exec rails db:startup --trace'  # assuming a startup task exists
+alias rtu='bundle exec rails test test/models'   # for unit testing
+alias rdtp='bundle exec rails db:test:prepare'
+alias rt='bundle exec rails test'          # for generic rake testing
 alias cuke='bundle exec cucumber'         # for cucumber testing
-alias tc='bundle exec tconsole'						# for tconsole (faster testing console)
+
+# For older versions of Rails
+# alias rdd='bundle exec rake db:drop'
+# alias rdm='bundle exec rake db:migrate'
+# alias rds='bundle exec rake db:startup --trace'  # assuming a startup task exists
+# alias rtu='bundle exec rake test:units'   # for unit testing
+# alias rdtp='bundle exec rake db:test:prepare'
+# alias rt='bundle exec rake test'          # for generic rake testing
+# alias powlog='tail -f log/development.log' # for the pow logs to appear in terminal much like rs
 
 
 # --------------
@@ -71,17 +51,44 @@ alias gpl="git pull"	# pull from repo
 alias gpom="git push origin master" # typically to send to github
 alias gpod="git push origin dev" # typically to send the dev branch to github
 alias gplom="git pull origin master" # typically to get master from github
+alias gplum="git pull upstream master" # typically to get upstream from a fork on github
 alias gplod="git pull origin dev" # typically to get the dev branch from github
 alias gphm="git push heroku master" # typically to send to heroku
 alias gco="git checkout" # checkout
 alias gcom="git checkout master" # checkout master branch
 alias gcod="git checkout dev" # checkout dev branch
+alias gcox="git checkout exp" # checkout exp branch
 alias gcl="git clone"	# invoking clone command
 alias gb="git branch"	# for branching
 alias gm="git merge"	# for merging
+alias gmd="git merge dev"	# for merging
+alias gmm="git merge master"	# for merging
+alias gmx="git merge exp"	# for merging
 alias gi="git instaweb --httpd webrick" # to visualize in browser
 alias gl="git gl"			# pretty log (specs in .gitconfig)
 alias gd="git diff"		# diff a file
 
+# --------------
 alias hk="heroku"     # shortcut for heroku commands
+alias capd="bundle exec cap deploy"  # shortcut for capistrano deployment
+
+# --------------
+# for mongodb and redis
 alias mdb="ulimit -n 2048 && mongod --config /usr/local/etc/mongod.conf"  # to start mongodb server
+alias redis="redis-server /usr/local/etc/redis.conf"  # to start redis server
+
+# --------------
+# for Python and Django
+alias p3="python3"
+alias pip="pip3"
+alias pi="pip3 install"
+alias dshell="python3 manage.py shell"
+alias djs="python3 manage.py runserver"
+alias mp="python3 manage.py"
+
+# --------------
+# Location aliases (most deleted b/c not relevant to others)
+alias h="cd ~" # There's no place like home...
+alias pow="cd ~/.pow && ln -s" # For setting up pow (rack dev server)
+alias s18="cd /Users/profh/67-272-S18"
+

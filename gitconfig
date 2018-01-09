@@ -32,7 +32,7 @@
 [core]
   pager = less -FRSX
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = /Users/lheimann/.gitignore
+	excludesfile = /Users/profh/.gitignore
 	quotepath = false
 
 [apply]
@@ -40,4 +40,4 @@
 
 [alias]
   co = checkout
-  gl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(yellow):%an%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  gl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(yellow):%an%Creset %Cblue(%cr)%Creset' --abbrev-commit --date=relative

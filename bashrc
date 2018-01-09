@@ -3,6 +3,6 @@
 	
 ### RVM
 if [[ -s ~/.rvm/scripts/rvm ]] ; then
-	source /Users/lheimann/.rvm/scripts/rvm
-	source /Users/lheimann/.rvm/scripts/completion ;
+	source /Users/profh/.rvm/scripts/rvm
+	source /Users/profh/.rvm/scripts/completion ;
 fi

@@ -1,6 +1,7 @@
 export EDITOR='mate -w'
 export GIT_EDITOR="mate -w"
 export TERM="xterm-color"
+source `brew --prefix`/etc/grc.bashrc
 
 untracked ()
 {
@@ -57,3 +58,6 @@ git_prompt ()
 #export PS1="\[\e[1;30m\]\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w\[\e[0m\]\e[1;30m\]\n\[\e[37m\]>\[\e[37m\]"
 # Need to use PROMPT_COMMAND to refresh the prompt with new value of git_prompt (correct line wrapping)
 PROMPT_COMMAND='PS1="\[\e[1;30m\]\e[\e[1;30m\]\e[1;35m\]\H \[\e[1;32m\]\w$(git_prompt)\[\e[0m\]\e[1;30m\]\n\[\e[37m\]> \[\e[37m\]"'
+
+#Setting up PATH (older; not relevant for others)
+#PATH=/usr/local/bin:/Applications/Postgres.app/Contents/MacOS/bin:$PATH:$HOME/.rvm/bin
