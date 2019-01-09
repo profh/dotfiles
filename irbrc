@@ -1,6 +1,6 @@
 # =========================
 # Prof. H's .irbrc file
-# Last update: 2018-01-09
+# Last update: 2019-01-09
 # =========================
 # External gems required:
 # -------------------------
@@ -50,7 +50,7 @@ IRB.conf[:PROMPT][:SIMPLE_COLOR] = {
 IRB.conf[:USE_READLINE] = true
  
 # Replace the irb(main):001:0 with a simple >>
-IRB.conf[:PROMPT_MODE]  = :SIMPLE
+IRB.conf[:PROMPT_MODE]  = :SIMPLE_COLOR
  
 # Tab completion
 require 'irb/completion'
@@ -89,6 +89,11 @@ extend_console 'hirb' do
   extend Hirb::Console
 end
 
+# Fancy IRB is a gem that colorizes irb and adds other helpers
+# See https://github.com/janlelis/fancy_irb 
+#extend_console 'fancy_irb' do
+#  FancyIrb.start
+#end
 
 
 # # Trick I like from Thoughtbot's Dan Croak to show log info in console
@@ -133,4 +138,16 @@ end
 
 def models
   tables.select{|t| t != "schema_migrations"}.map{|t| t.underscore.singularize.camelize.to_sym}
+end
+
+# Automating the creating of contexts in rails console
+def set_context
+  require 'factory_bot_rails'
+  require './test/contexts'
+  include Contexts
+  puts 'Contexts enabled'
+  if Contexts.respond_to?(:create_all)
+    create_all
+    puts 'Contexts built'
+  end
 end
