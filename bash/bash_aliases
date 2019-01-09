@@ -23,28 +23,32 @@ alias rdp='bundle exec rake db:populate --trace'  # assuming a populate task exi
 alias rdc='bundle exec rails db:create'
 alias rdd='bundle exec rails db:drop'
 alias rdm='bundle exec rails db:migrate'
-alias rdp='bundle exec rails db:populate --trace'  # assuming a populate task exists
+alias rdp='bundle exec rails db:populate --trace' # assuming a populate task exists
 alias rds='bundle exec rails db:startup --trace'  # assuming a startup task exists
-alias rtu='bundle exec rails test test/models'   # for unit testing
+alias rtu='bundle exec rails test test/models'    # older; for unit testing
 alias rdtp='bundle exec rails db:test:prepare'
-alias rt='bundle exec rails test'          # for generic rake testing
-alias cuke='bundle exec cucumber'         # for cucumber testing
+alias rt='bundle exec rails test'                 # for generic rails testing
+alias rtm='bundle exec rails test:models'         # for rails testing of models
+alias rtc='bundle exec rails test:controllers'    # for rails testing of controllers
+alias cuke='bundle exec cucumber'                 # for cucumber testing
+alias pumalog='tail -f ~/Library/Logs/puma-dev.log'  # for puma-dev logs
 
 # For older versions of Rails
 # alias rdd='bundle exec rake db:drop'
 # alias rdm='bundle exec rake db:migrate'
 # alias rds='bundle exec rake db:startup --trace'  # assuming a startup task exists
-# alias rtu='bundle exec rake test:units'   # for unit testing
+# alias rtu='bundle exec rake test:units'          # for unit testing
 # alias rdtp='bundle exec rake db:test:prepare'
-# alias rt='bundle exec rake test'          # for generic rake testing
-# alias powlog='tail -f log/development.log' # for the pow logs to appear in terminal much like rs
+# alias rt='bundle exec rake test'                 # for generic rake testing
+# alias powlog='tail -f log/development.log'       # for the pow logs to appear in terminal much like rs
 
 
 # --------------
 # for git
 alias g="git status"	# status of files
 alias ga="git add"		# add a file to staging
-alias gr="git rm" 		# remove a file 
+alias grm="git rm" 		# remove a file 
+alias grv="git remote -v"       # see the remotes associated with repo
 alias gc="git commit -m"	# commit files to repo
 alias gp="git push"		# push to repo
 alias gpl="git pull"	# pull from repo
@@ -54,6 +58,7 @@ alias gplom="git pull origin master" # typically to get master from github
 alias gplum="git pull upstream master" # typically to get upstream from a fork on github
 alias gplod="git pull origin dev" # typically to get the dev branch from github
 alias gphm="git push heroku master" # typically to send to heroku
+alias gpgm="git push github master" # if I've set up a github remote
 alias gco="git checkout" # checkout
 alias gcom="git checkout master" # checkout master branch
 alias gcod="git checkout dev" # checkout dev branch
@@ -85,6 +90,7 @@ alias pi="pip3 install"
 alias dshell="python3 manage.py shell"
 alias djs="python3 manage.py runserver"
 alias mp="python3 manage.py"
+alias jsonpp="python3 -m json.tool"
 
 # --------------
 # Location aliases (most deleted b/c not relevant to others)
